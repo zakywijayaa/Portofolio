@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB PORTOFOLIO - Mohammad Zaky</title>
+    <!-- Pastikan nama file CSS ini sesuai dengan file CSS Anda -->
+    <link rel="stylesheet" href="Stle1.css">
+</head>
+<body>
+
+    <!-- NAVBAR SECTION -->
+    <div class="main-container">
+        <div class="nav"> 
+            <div class="logo">
+                <a href="/">MOHAMMAD <span>ZAKY</span></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#service">Services</a></li>
+                    <li><a href="#portofolios">Portofolio</a></li>
+                    <li><a href="#skill">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li>
+                        <a href="/Resume_pdf" target="_blank" class="btn">Resume</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="burger">
+                <div class="line-1"></div>
+                <div class="line-2"></div>
+                <div class="line-3"></div>
+            </div>
+        </div> 
+    </div>
+    
+    <!-- HERO SECTION -->
+    <section id="hero">
+        <div class="main-container" style="display: flex; align-items: center; justify-content: space-between; width: 100%; flex-wrap: wrap;">
+            
+            <div class="hero-left slide-left">
+                <h3 class="pre-title">My Name is</h3>
+                <h1 class="hero-name">Mohammad<span>Zaky</span></h1>
+                <p>Mahasiswa Teknologi Informasi yang tertarik pada pengembangan web, desain visual, dan teknologi digital. Saya senang mempelajari hal baru dan mengubah ide menjadi karya yang bermakna.</p>
+                
+                <!-- Tombol Hero Modern -->
+                <div class="hero-buttons">
+                    <a href="#portofolios" class="btn btn-primary">
+                        Jelajahi Proyek 
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                            <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg>
+                    </a>
+                    <a href="#service" class="btn btn-secondary">
+                        Kenali Saya
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-right slide-right">
+                <img src="Images/sapiens.svg" alt="Person standing">
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="service">
+        <div class="service main-container">
+            <h3 class="pre-title fade-up">- Services</h3>
+            <h1 class="section-title service-title fade-up delay-100">Specialized in</h1>
+
+            <div class="grid-3">
+                <div class="services fade-up delay-100">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M3 16l-3-10 7.104 4 4.896-8 4.896 8 7.104-4-3 10h-18zm0 2v4h18v-4h-18z"/>
+                        </svg>
+                    </div>
+                    <h4>UI/UX Design</h4>
+                    <p>Merancang antarmuka pengguna yang intuitif, menarik, dan berpusat pada kenyamanan interaksi manusia.</p>
+                </div>
+                
+                <div class="services fade-up delay-200">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M22 18v-7h-9v-5h3v-6h-8v6h3v5h-9v7h-2v6h6v-6h-2v-5h7v5h-2v6h6v-6h-2v-5h7v5h-2v6h6v-6z"/>
+                        </svg>
+                    </div>
+                    <h4>App Development</h4>
+                    <p>Membangun aplikasi cerdas dan responsif yang siap digunakan di berbagai jenis perangkat platform.</p>
+                </div>
+
+                <div class="services fade-up delay-300">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm1 16.057v-3.057h2.994c-.059 1.143-.212 2.24-.456 3.279-.823-.12-1.674-.188-2.538-.222zm1.957 2.162c-.499 1.33-1.159 2.497-1.957 3.456v-3.62c.666.028 1.319.081 1.957.164zm-1.957-7.219v-3.015c.868-.034 1.721-.103 2.548-.224.238 1.027.389 2.111.446 3.239h-2.994zm0-5.014v-3.661c.806.969 1.471 2.15 1.971 3.496-.642.084-1.3.137-1.971.165zm2.703-3.267c1.237.496 2.354 1.228 3.29 2.146-.642.234-1.311.442-2.019.607-.344-.992-.775-1.91-1.271-2.753zm-7.241 13.56c-.244-1.039-.398-2.136-.456-3.279h2.994v3.057c-.865.034-1.714.102-2.538.222zm2.538 1.776v3.62c-.798-.959-1.458-2.126-1.957-3.456.638-.083 1.291-.136 1.957-.164zm-2.994-7.055c.057-1.128.207-2.212.446-3.239.827.121 1.68.19 2.548.224v3.015h-2.994zm1.024-5.179c.5-1.346 1.165-2.527 1.97-3.496v3.661c-.671-.028-1.329-.081-1.97-.165zm-2.005-.35c-.708-.165-1.377-.373-2.018-.607.937-.918 2.053-1.65 3.29-2.146-.496.844-.927 1.762-1.272 2.753zm-.549 1.918c-.264 1.151-.434 2.36-.492 3.611h-3.933c.165-1.658.739-3.197 1.617-4.518.88.361 1.816.67 2.808.907zm.009 9.262c-.988.236-1.92.542-2.797.9-.89-1.328-1.471-2.879-1.637-4.551h3.934c.058 1.265.231 2.488.5 3.651zm.553 1.917c.342.976.768 1.881 1.257 2.712-1.223-.49-2.326-1.211-3.256-2.115.636-.229 1.299-.435 1.999-.597zm9.924 0c.7.163 1.362.367 1.999.597-.931.903-2.034 1.625-3.257 2.116.489-.832.915-1.737 1.258-2.713zm.553-1.917c.27-1.163.442-2.386.501-3.651h3.934c-.167 1.672-.748 3.223-1.638 4.551-.877-.358-1.81-.664-2.797-.9zm.501-5.651c-.058-1.251-.229-2.46-.492-3.611.992-.237 1.929-.546 2.809-.907.877 1.321 1.451 2.86 1.616 4.518h-3.933z"/>
+                        </svg>
+                    </div>
+                    <h4>Web Development</h4>
+                    <p>Menguasai perancangan sistem backend dan frontend untuk menyajikan pengalaman web modern.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO SECTION -->
+    <section id="portofolios">
+        <div class="portofolios main-container">
+            <h3 class="pre-title fade-up">My Works</h3>
+            <h1 class="section-title portofolios-title fade-up delay-100">Featured Portofolios</h1>
+            
+            <div class="grid-3">
+                <div class="portofolio fade-up delay-100"> 
+                    <div class="portofolio-cover">
+                        <img src="" alt="Portofolio 1">
+                    </div>
+                    <div class="portofolio-info">
+                        <div class="portofolio-title">
+                            <h1>Agency Website</h1>
+                            <a href="#" class="Portofolio-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <path d="M6 17c2.269-9.881 11-11.667 11-11.667v-3.333l7 6.637-7 6.696v-3.333s-6.17-.171-11 5zm12 .145v2.855h-16v-12h6.598c.768-.787 1.561-1.449 2.339-2h-10.937v16h20v-6.769l-2 1.914z"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="portofolio-tags">
+                            <div>React</div>
+                            <div>Tailwind</div>
+                        </div>
+                        <p>Desain website agensi kreatif yang modern, cepat, dan sepenuhnya responsif di semua perangkat layar.</p>
+                    </div>
+                </div> 
+
+                <div class="portofolio fade-up delay-200">
+                    <div class="portofolio-cover">
+                        <img src="" alt="Portofolio 2">
+                    </div>
+                    <div class="portofolio-info">
+                        <div class="portofolio-title">
+                            <h1>Landing Page</h1>
+                            <a href="#" class="Portofolio-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <path d="M6 17c2.269-9.881 11-11.667 11-11.667v-3.333l7 6.637-7 6.696v-3.333s-6.17-.171-11 5zm12 .145v2.855h-16v-12h6.598c.768-.787 1.561-1.449 2.339-2h-10.937v16h20v-6.769l-2 1.914z"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="portofolio-tags">
+                            <div>Vue</div>
+                            <div>Contentful</div>
+                        </div>
+                        <p>Halaman pendaratan produk interaktif untuk kampanye pemasaran dengan integrasi CMS yang dinamis.</p>
+                    </div>
+                </div> 
+
+                <div class="portofolio fade-up delay-300"> 
+                    <div class="portofolio-cover">
+                        <img src="" alt="Portofolio 3">
+                    </div>
+                    <div class="portofolio-info">
+                        <div class="portofolio-title">
+                            <h1>Dashboard Admin</h1>
+                            <a href="#" class="Portofolio-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <path d="M6 17c2.269-9.881 11-11.667 11-11.667v-3.333l7 6.637-7 6.696v-3.333s-6.17-.171-11 5zm12 .145v2.855h-16v-12h6.598c.768-.787 1.561-1.449 2.339-2h-10.937v16h20v-6.769l-2 1.914z"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="portofolio-tags">
+                            <div>React</div>
+                            <div>Materialize</div>
+                        </div>
+                        <p>Sistem panel admin komprehensif untuk melacak metrik analitik harian, performa, dan manajemen data.</p>
+                    </div> 
+                </div> 
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skill">
+        <div class="skill main-container">
+            <h3 class="pre-title fade-up">Learning path</h3>
+            <h1 class="section-title fade-up delay-100">Skills & Education</h1>
+              
+            <div class="skill-grid">
+                <!-- Timeline Pendidikan Kiri -->
+                <div class="skill-left slide-left delay-100">
+                    <div class="education">
+                        <div class="line"><div></div></div>
+                        <div class="education-info">
+                            <h4 class="education-title">Universitas Bina Sarana Informatika</h4>
+                            <p>Fakultas Teknologi Informasi - Jurusan Teknik Informatika. Berfokus pada pengembangan sistem cerdas.</p>
+                            <h4 class="education-years">2023 - Saat ini</h4>        
+                        </div>
+                    </div>
+                    <div class="education">
+                        <div class="line"><div></div></div>
+                        <div class="education-info">
+                            <h4 class="education-title">Asal Sekolah (SMA/SMK)</h4>
+                            <p>Mempelajari dasar-dasar ilmu rekayasa perangkat lunak dan arsitektur jaringan komputer.</p>
+                            <h4 class="education-years">2020 - 2023</h4>        
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Daftar Skill Kanan -->
+                <div class="skill-right slide-right delay-200">
+                    <p>Saya berdedikasi menciptakan karya digital dengan standar terbaik menggunakan bahasa pemrograman modern.</p>
+                    <div class="skill-list">
+                        <ul>
+                            <li>HTML5 & CSS3</li>
+                            <li>JavaScript (ES6+)</li>
+                            <li>React.js / Vue.js</li>
+                            <li>Tailwind CSS</li>
+                        </ul>
+                        <ul>
+                            <li>UI/UX Prototyping</li>
+                            <li>Figma & Adobe XD</li>
+                            <li>Git & GitHub</li>
+                            <li>Web Responsif</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+        <div class="contact main-container">
+            <div class="contact-left slide-left delay-100">
+                <form class="contact-form" action="#">
+                    <div>
+                        <input type="text" placeholder="Name" name="Name">
+                    </div>
+                    <div>
+                        <input type="email" placeholder="Email" name="email">
+                    </div>
+                    <div>
+                        <textarea name="Message" id="Message" placeholder="Message" cols="30" rows="10"></textarea>
+                    </div>
+                    <button class="btn-submit">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+            
+            <div class="contact-right slide-right delay-200">
+                <div class="contact-item">
+                    <div class="contact-item-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    </div>
+                    <div class="contact-item-detail">
+                        <h4>Location</h4>
+                        <p>Depok, Jawa Barat, Indonesia</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-item-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    </div>
+                    <div class="contact-item-detail">
+                        <h4>Email Address</h4>
+                        <p>zaky@example.com</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-item-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                    </div>
+                    <div class="contact-item-detail">
+                        <h4>Phone Number</h4>
+                        <p>+62 812 3456 7890</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER SECTION -->
+    <footer id="footer" class="site-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand fade-up">
+                    <a class="footer-name" href="#hero">Mohammad <span>Zaky</span></a>
+                    <p class="footer-description">Mahasiswa Teknologi Informasi yang tertarik pada pengembangan web, desain, dan teknologi digital.</p>
+                    <h3>Hubungi Saya</h3>
+                    <a class="footer-contact" href="mailto:zaky@example.com">zaky@example.com</a>
+                    <p class="footer-contact">Depok, Jawa Barat, Indonesia</p>
+                </div>
+
+                <div class="footer-column fade-up delay-100">
+                    <h3>Kategori</h3>
+                    <a href="#service">Programming</a>
+                    <a href="#skill">Teknologi</a>
+                    <a href="#portofolios">Desain & Kreativitas</a>
+                </div>
+
+                <div class="footer-column fade-up delay-200">
+                    <h3>Tautan Cepat</h3>
+                    <a href="#hero">Beranda</a>
+                    <a href="#service">Tentang Saya</a>
+                    <a href="#portofolios">Portofolio</a>
+                    <a href="#skill">Skills & Education</a>
+                    <a href="#contact">Kontak</a>
+                </div>
+            </div>
+
+            <div class="footer-divider fade-up delay-100"></div>
+            <div class="footer-socials fade-up delay-200" aria-label="Media sosial">
+                <a class="social-icon" href="mailto:zaky@example.com"><span>✉</span></a>
+                <a class="social-icon" href="#"><span>in</span></a>
+                <a class="social-icon" href="#"><span>⌘</span></a>
+                <a class="social-icon" href="#"><span>◎</span></a>
+                <a class="social-icon" href="#"><span>▶</span></a>
+            </div>
+            <p class="footer-credit fade-up delay-200">Dibuat dengan sepenuh hati oleh <a href="#hero">Mohammad Zaky</a> · © 2026</p>
+        </div>
+        
+        <a class="back-to-top" href="#hero" aria-label="Kembali ke atas">
+            <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#ffffff">
+                    <path d="M 12 1.5 C 11.824 1.5 11.648 1.546 11.492 1.638 L 1.992 7.226 C 1.516 7.506 1.358 8.119 1.638 8.595 C 1.917 9.069 2.526 9.228 3 8.953 L 3 20 C 3 20.552 3.448 21 4 21 L 8 21 L 8 12 C 8 11.448 8.448 11 9 11 L 15 11 C 15.552 11 16 11.448 16 12 L 16 21 L 20 21 C 20.552 21 21 20.552 21 20 L 21 8.953 C 21.157 9.044 21.328 9.087 21.498 9.087 C 21.841 9.087 22.175 8.912 22.361 8.595 C 22.641 8.119 22.483 7.505 22.007 7.226 L 12.507 1.638 C 12.351 1.546 12.175 1.5 12 1.5 z M 10 13 L 10 21 L 14 21 L 14 13 L 10 13 z"></path>
+                </svg>
+            </span>
+        </a>
+    </footer>
+
+    <!-- SCRIPTS (Burger Menu & Animasi Scroll) -->
+    <script>
+        // 1. Logika Burger Menu (Mobile)
+        const burger = document.querySelector('.burger');
+        const nav = document.querySelector('.nav ul');
+        const navLinks = document.querySelectorAll('.nav ul li a');
+
+        burger.addEventListener('click', () => {
+            nav.classList.toggle('nav-active');
+            burger.classList.toggle('toggle');
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (nav.classList.contains('nav-active')) {
+                    nav.classList.remove('nav-active');
+                    burger.classList.remove('toggle');
+                }
+            });
+        });
+
+        // 2. Logika Scroll Animation (Intersection Observer)
+        const animatedElements = document.querySelectorAll('.fade-up, .slide-left, .slide-right');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                // Tambahkan class show-animate ketika elemen masuk ke layar
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show-animate');
+                }
+            });
+        }, {
+            threshold: 0.1 // Muncul saat 10% bagian elemen sudah terlihat di layar
+        });
+
+        animatedElements.forEach((el) => observer.observe(el));
+    </script>
+
+</body>
+</html>

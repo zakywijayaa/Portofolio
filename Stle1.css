@@ -1,0 +1,889 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap');
+
+/* =========================================
+   1. VARIABLES (Tema Warna & Ukuran)
+========================================= */
+:root {
+    --primaryTextColor: #232e35; 
+    --secondaryTextColor: #656d72; 
+    
+    --borderColor: #e8e8e8; 
+    --LineColor: #5d51e8; /* Warna aksen utama (Ungu/Biru) */
+
+    --primaryBackgroundColor: #ffffff; 
+    --secondaryBackgroundColor: #f8f8fb; 
+    --thirdBackgroundColor: #f5f3fe; 
+
+    --primaryiconColor: #5d51e8; 
+    --primaryiconColorHover: #4a3fd1; 
+
+    --sectionpadding: 8rem 0;
+    --itemborderRadius: 0.8rem; 
+}
+
+/* =========================================
+   2. BASE & RESET (Pengaturan Dasar)
+========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--primaryBackgroundColor);
+    color: var(--secondaryTextColor);
+    overflow-x: hidden; /* Mencegah layar bergeser ke samping */
+}
+
+h1, h2, h3, h4, h5, h6, strong {
+    color: var(--primaryTextColor);
+}
+
+p {
+   font-size: 1rem; 
+   line-height: 1.6rem; 
+}
+
+a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* =========================================
+   3. LAYOUT & CONTAINERS
+========================================= */
+.main-container, .main.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 2.5rem;
+}
+
+/* =========================================
+   4. COMPONENTS (Tombol & Judul)
+========================================= */
+/* --- Buttons Base --- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem; 
+    padding: 0.9rem 1.8rem;
+    border-radius: 8px; 
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* --- Primary Button (Jelajahi Proyek) --- */
+.btn-primary {
+    background-color: var(--LineColor);
+    color: #fff !important;
+    border: 1px solid var(--LineColor);
+}
+
+.btn-primary:hover {
+    background-color: var(--primaryiconColorHover);
+    border-color: var(--primaryiconColorHover);
+    transform: translateY(-4px); 
+    box-shadow: 0 8px 20px rgba(93, 81, 232, 0.3); 
+}
+
+.btn-primary svg {
+    transition: transform 0.3s ease;
+}
+
+.btn-primary:hover svg {
+    transform: translate(3px, -3px);
+}
+
+/* --- Secondary Button (Kenali Saya) --- */
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primaryTextColor) !important;
+    border: 2px solid var(--borderColor);
+}
+
+.btn-secondary:hover {
+    border-color: var(--LineColor);
+    color: var(--LineColor) !important;
+    background-color: var(--thirdBackgroundColor);
+    transform: translateY(-4px);
+}
+
+/* --- Global Section Titles --- */
+.section-title {
+    text-align: center; 
+    margin: 0.5rem 0 4rem 0; 
+    font-size: 2.2rem;
+}
+
+/* --- Pre-title (Teks Kecil Bergaris) --- */
+.pre-title {
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    color: var(--secondaryTextColor);
+    font-weight: 500;
+    font-size: 0.9rem;
+    position: relative;
+    padding-left: 50px; 
+    width: fit-content;
+    margin: 2rem auto 1.5rem auto; 
+}
+
+.pre-title::before {
+    content: "";
+    width: 30px;
+    height: 2px;
+    background: var(--LineColor);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%); 
+}
+
+#hero .pre-title {
+    margin: 0 0 1.5rem 0; 
+}
+
+/* =========================================
+   5. NAVIGATION BAR & BURGER MENU
+========================================= */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.logo a {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--primaryTextColor);
+}
+
+.logo a span {
+    color: var(--LineColor);
+}
+
+nav ul li a {
+    color: var(--primaryTextColor);
+    font-weight: 500;
+}
+
+nav ul li a:hover {
+    color: var(--primaryiconColor);
+}
+
+/* Gaya Khusus Tombol Resume di Navbar Desktop */
+nav .btn {
+    background-color: transparent;
+    border: 1px solid var(--LineColor);
+    color: var(--LineColor) !important;
+    padding: 0.6rem 1.2rem;
+}
+
+nav .btn:hover {
+    background-color: var(--LineColor);
+    color: #fff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(93, 81, 232, 0.2);
+}
+
+/* Tampilan Ikon Burger Ala Kotak */
+.burger {
+    display: none; 
+    cursor: pointer;
+    z-index: 99;
+    border: 1px solid var(--borderColor);
+    padding: 6px 5px;
+    border-radius: 8px;
+    background-color: var(--primaryBackgroundColor);
+    transition: 0.3s;
+}
+
+.burger:hover {
+    border-color: var(--LineColor);
+}
+
+.burger div {
+    width: 24px;
+    height: 2px;
+    background-color: var(--primaryTextColor);
+    margin: 5px;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Responsivitas Menu Mobile & Umum */
+@media screen and (max-width: 768px) {
+    .nav { 
+        position: relative; 
+        background-color: var(--primaryBackgroundColor);
+        z-index: 99;
+    }
+    
+    /* Ubah menu menjadi Dropdown Penuh Rata Kiri */
+    .nav ul {
+        position: absolute;
+        left: 0;
+        top: 100%; 
+        width: 100%;
+        height: auto;
+        background-color: var(--primaryBackgroundColor);
+        display: flex;
+        flex-direction: column;
+        align-items: stretch; 
+        padding: 1rem 5% 2rem 5%;
+        transform: translateY(-20px);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0px 15px 15px rgba(0,0,0,0.05);
+        z-index: 98;
+        border-bottom: 1px solid var(--borderColor);
+        border-radius: 0 0 1.2rem 1.2rem;
+    }
+    
+    .nav ul.nav-active { 
+        transform: translateY(0); 
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav ul li { margin: 0; }
+    
+    .nav ul li a:not(.btn) {
+        display: block;
+        padding: 1.2rem 0;
+        font-size: 1.1rem;
+        font-weight: 600;
+        border-bottom: 1px solid rgba(0,0,0,0.03); 
+    }
+
+    /* Tombol Resume Full-width di bawah menu mobile */
+    nav ul li:last-child {
+        margin-top: 1.5rem;
+    }
+
+    nav .btn {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        padding: 1rem;
+    }
+
+    .burger { display: block; }
+
+    /* Animasi Burger menjadi huruf X */
+    .toggle .line-1 { transform: translateY(7px) rotate(45deg); }
+    .toggle .line-2 { opacity: 0; }
+    .toggle .line-3 { transform: translateY(-7px) rotate(-45deg); }
+    
+    #hero { flex-direction: column; text-align: center; }
+    #hero .pre-title { margin: 0 auto 1.5rem auto; } 
+    #hero .hero-buttons { justify-content: center; }
+    .hero-right { justify-content: center; margin-top: 2rem;}
+    
+    .contact { grid-template-columns: 1fr !important; gap: 3.5rem !important; }
+}
+
+/* =========================================
+   6. HERO SECTION
+========================================= */
+#hero {
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 6rem 0; 
+}
+
+.hero-left, .hero-right {
+    flex: 1;
+}
+
+.hero-name {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0.5rem 0 1rem;
+}
+
+.hero-name span {
+    color: var(--LineColor); 
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1.2rem;
+    margin-top: 2.5rem;
+    flex-wrap: wrap; 
+}
+
+.hero-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hero-right img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* =========================================
+   7. SERVICES SECTION
+========================================= */
+#service, #Service { 
+    background-color: var(--primaryBackgroundColor);
+    padding: var(--sectionpadding);
+}
+
+.services {
+    padding: 3rem 2rem;
+    text-align: center;
+    background: var(--primaryBackgroundColor);
+    border-radius: var(--itemborderRadius);
+    border: 1px solid var(--borderColor);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.services:hover {
+    transform: translateY(-7px); 
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.05);
+    border-color: transparent;
+}
+
+.services h4 {
+    margin: 1.5rem 0 0.8rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.service-icon {
+    background: var(--thirdBackgroundColor);
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.service-icon svg {
+    fill: var(--primaryiconColor);
+}
+
+/* =========================================
+   8. PORTFOLIO SECTION
+========================================= */
+#portofolios, #Portofolios { 
+    padding: var(--sectionpadding);
+    background-color: var(--primaryBackgroundColor);
+}
+
+.portofolio {
+    border-radius: var(--itemborderRadius);
+    overflow: hidden;
+    border: 1px solid var(--borderColor);
+    background: var(--primaryBackgroundColor);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portofolio:hover {
+    transform: translateY(-7px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.05);
+    border-color: transparent;
+}
+
+.portofolio-cover {
+    height: 220px;
+    background: var(--thirdBackgroundColor);
+}
+
+.portofolio-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.portofolio-info {
+    padding: 2rem 1.5rem;
+}
+
+.portofolio-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.portofolio-title h1 {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.portofolio-title a svg {
+    fill: var(--secondaryTextColor);
+    transition: 0.2s ease;
+}
+
+.portofolio-title a:hover svg {
+    fill: var(--primaryiconColor);
+}
+
+.portofolio-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin: 1.2rem 0;
+}
+
+.portofolio-tags div {
+    font-size: 0.85rem;
+    background: var(--thirdBackgroundColor);
+    border-radius: 4px;
+    padding: 0.4rem 1rem;
+    color: var(--primaryiconColor);
+    font-weight: 500;
+}
+
+/* =========================================
+   9. SKILL & EDUCATION SECTION
+========================================= */
+#skill, #Skill, #Skills {
+    padding: var(--sectionpadding);
+    background-color: var(--secondaryBackgroundColor);
+}
+
+.skill-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 4rem;
+    margin-top: 2rem;
+}
+
+.education {
+    display: flex;
+    gap: 2rem;
+}
+
+.education .line {
+    padding: 0 0.5rem;
+}
+
+.education .line div {
+    width: 2px;
+    height: 100%;
+    background: var(--borderColor);
+    position: relative;
+}
+
+.education .line div::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    background: var(--LineColor);
+    border-radius: 50%;
+    position: absolute;
+    left: -7px;
+    top: 5px; 
+    box-shadow: 0 0 0 5px var(--thirdBackgroundColor); 
+}
+
+.education-info {
+    margin: 0 0 3rem 0; 
+}
+
+.education-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.education-years {
+    color: var(--primaryiconColor);
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-top: 0.8rem;
+}
+
+.skill-right p {
+    margin-bottom: 2rem; 
+    font-size: 1.05rem;
+}
+
+.skill-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 1rem;
+    background: var(--primaryBackgroundColor);
+    padding: 2rem;
+    border-radius: var(--itemborderRadius);
+    border: 1px solid var(--borderColor);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.02);
+}
+
+.skill-list ul {
+    list-style-type: none; 
+    line-height: 2.2rem;
+}
+
+.skill-list ul li::before {
+    content:"■"; 
+    color: var(--primaryiconColor);
+    font-size: 0.8rem;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+/* =========================================
+   10. CONTACT SECTION
+========================================= */
+#contact, #Contact {
+    padding: var(--sectionpadding);
+    background-color: var(--primaryBackgroundColor);
+}
+
+.contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 4rem; 
+    align-items: flex-start; 
+}
+
+.contact-form div {
+    margin-bottom: 1.5rem;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    font-family: 'Roboto', sans-serif;
+    background: var(--secondaryBackgroundColor);
+    border: 1px solid var(--borderColor); 
+    border-radius: 6px;
+    resize: none;
+    transition: 0.3s;
+    font-size: 1rem;
+}
+
+.contact-form textarea {
+    min-height: 180px; 
+}
+
+.contact-form input::placeholder, .contact-form textarea::placeholder {
+    color: #939ca3;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    outline: none;
+    border: 1px solid var(--LineColor);
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(93, 81, 232, 0.1); 
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 1.2rem;
+    background-color: var(--primaryiconColor);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.05rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn-submit:hover {
+    background: var(--primaryiconColorHover);
+    box-shadow: 0 4px 10px rgba(93, 81, 232, 0.3);
+}
+
+.contact-right {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem; 
+    padding-top: 0.3rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+}
+
+.contact-item-icon {
+    background: var(--thirdBackgroundColor);
+    width: 70px;
+    height: 70px;
+    border-radius: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primaryiconColor);
+    flex-shrink: 0; 
+}
+
+.contact-item-icon svg {
+    width: 28px;
+    height: 28px;
+    fill: var(--primaryiconColor);
+}
+
+.contact-item-detail h4 {
+    margin-bottom: 0.4rem;
+    font-size: 1.2rem;
+    color: var(--primaryTextColor);
+}
+
+.contact-item-detail p {
+    font-size: 1rem;
+    line-height: 1.6rem;
+    color: var(--secondaryTextColor);
+}
+
+/* =========================================
+   11. FOOTER SECTION
+========================================= */
+.site-footer {
+    position: relative;
+    isolation: isolate;
+    padding: 3.5rem 1.5rem 1.4rem;
+    color: #e2e8f0;
+    background: #0f172a; 
+    border-top: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+.footer-container { 
+    width: min(1120px, 100%); 
+    margin: 0 auto; 
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.7fr 1fr 1fr;
+    gap: clamp(2rem, 6vw, 5.5rem);
+    padding-bottom: 2.7rem;
+}
+
+.footer-name {
+    display: inline-block;
+    margin-bottom: .8rem;
+    color: #f8fafc;
+    font-size: clamp(1.6rem, 3vw, 2.15rem);
+    font-weight: 800;
+    letter-spacing: -.04em;
+    text-transform: capitalize;
+}
+
+.footer-name span { 
+    color: var(--LineColor); 
+}
+
+.footer-description { 
+    max-width: 340px; 
+    margin: 0 0 1.5rem; 
+    color: #94a3b8; 
+    line-height: 1.8; 
+}
+
+.footer-brand h3, .footer-column h3 { 
+    margin: 0 0 1.15rem; 
+    color: #f8fafc; 
+    font-size: 1rem; 
+    font-weight: 700; 
+}
+
+.footer-contact { 
+    display: block; 
+    margin: .45rem 0; 
+    color: #cbd5e1; 
+    font-size: .94rem; 
+}
+
+.footer-column { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-start; 
+    gap: .85rem; 
+}
+
+.footer-column a { 
+    color: #cbd5e1; 
+    font-size: .95rem; 
+    transition: color .2s ease, transform .2s ease; 
+}
+
+.footer-column a:hover, .footer-contact[href]:hover { 
+    color: var(--LineColor); 
+}
+
+.footer-column a:hover { 
+    transform: translateX(3px); 
+}
+
+.footer-divider { 
+    height: 1px; 
+    background: rgba(148, 163, 184, 0.25); 
+}
+
+.footer-socials { 
+    display: flex; 
+    justify-content: center; 
+    flex-wrap: wrap; 
+    gap: .8rem; 
+    padding: 2rem 0 1rem; 
+}
+
+.social-icon {
+    display: inline-flex; 
+    width: 42px; 
+    height: 42px; 
+    align-items: center; 
+    justify-content: center;
+    border: 1px solid #64748b; 
+    border-radius: 50%; 
+    color: #e2e8f0;
+    font-size: 1.1rem; 
+    font-weight: 700; 
+    transition: background .2s ease, border-color .2s ease, color .2s ease, transform .2s ease;
+}
+
+.social-icon:hover { 
+    color: white; 
+    background: var(--LineColor); 
+    border-color: var(--LineColor); 
+    transform: translateY(-3px); 
+}
+
+.footer-credit { 
+    margin: .25rem 0 0; 
+    color: #94a3b8; 
+    font-size: .82rem; 
+    text-align: center; 
+    line-height: 1.7; 
+}
+
+.footer-credit a { 
+    color: var(--LineColor); 
+    font-weight: 700; 
+}
+
+.footer-credit a:hover { 
+    color: var(--primaryiconColorHover); 
+}
+
+.back-to-top {
+    position: absolute; 
+    right: max(1.25rem, calc((100vw - 1200px) / 2)); 
+    bottom: 1.2rem;
+    display: flex; 
+    width: 48px; 
+    height: 48px; 
+    align-items: center; 
+    justify-content: center;
+    border-radius: 50%; 
+    background: var(--LineColor); 
+    color: white; 
+    box-shadow: 0 8px 24px rgba(93, 81, 232, 0.25); 
+    transition: transform .2s ease, background .2s ease;
+}
+
+.back-to-top span { 
+    margin-top: 7px; 
+    font-size: 2rem; 
+    line-height: 1; 
+}
+
+.back-to-top:hover { 
+    background: var(--primaryiconColorHover); 
+    transform: translateY(-3px); 
+}
+
+@media (max-width: 700px) {
+    .site-footer { 
+        padding: 2.5rem 1.25rem 1.25rem; 
+    }
+    .footer-grid { 
+        grid-template-columns: 1fr 1fr; 
+        gap: 2rem 1.25rem; 
+    }
+    .footer-brand { 
+        grid-column: 1 / -1; 
+    }
+    .footer-description { 
+        max-width: 100%; 
+    }
+    .back-to-top { 
+        right: 1rem; 
+        bottom: 1rem; 
+        width: 42px; 
+        height: 42px; 
+    }
+    .footer-credit { 
+        padding: 0 2.8rem; 
+    }
+}
+
+@media (max-width: 390px) { 
+    .footer-grid { 
+        grid-template-columns: 1fr; 
+    } 
+    .footer-brand { 
+        grid-column: auto; 
+    } 
+}
+
+/* =========================================
+   12. SCROLL ANIMATIONS (Intersection Observer)
+========================================= */
+.fade-up {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.slide-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.slide-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.show-animate {
+    opacity: 1;
+    transform: translate(0);
+}
+
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
